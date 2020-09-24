@@ -21,7 +21,7 @@ while statement:
     except ValueError:
         print("That's not a number!")
         time.sleep(1)
-        for i in range(3):
+        for i in range(4):
             sys.stdout.write("\033[F")
             sys.stdout.write("\033[K")
             sys.stdout.flush()
@@ -40,4 +40,19 @@ while statement:
         statement = False
     else:
         continue
-    print("The total sum is {}!".format(total_sum))
+    print("\nThe total sum is {}!\n".format(total_sum))
+
+    time.sleep(1)
+
+    bol = True
+    while bol:
+        answer = input("\nDo you want to try another pair of numbers? (yes/no)\n").lower().strip()
+        if answer == "yes":
+            statement = True
+            bol = False
+        elif answer == "no":
+            print("\nGoodbye!\n")
+            break
+        else:
+            print("\nPlease answer with a yes or a no.\n")
+            continue
