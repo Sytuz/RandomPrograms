@@ -55,6 +55,8 @@ while statement:
 
 if numbers % 2 == 0 and numbers != 0:
     count = int(numbers / 2)
+    if count < 0:
+        count = count * -1
     added = number_1 + number_2
 
     print(f"""
@@ -72,6 +74,8 @@ which will give us the final result: {total_sum}.
         """)
 else:
     count = int(numbers / 2)
+    if count < 0:
+        count = count * -1
     middle = count + 1
     added = number_1 + number_2
 
