@@ -36,15 +36,15 @@ while statement:
     if number_1 > number_2:
         for number in range(number_2, number_1+1):
             total_sum += number
-            big_number = number_1
-            small_number = number_2
+        big_number = number_1
+        small_number = number_2
         numbers = number_1 + 1 - number_2
         statement = False
     elif number_1 < number_2:
         for number in range(number_1, number_2+1):
             total_sum += number
-            big_number = number_2
-            small_number = number_1
+        big_number = number_2
+        small_number = number_1
         numbers = number_2 + 1 - number_1
         statement = False
     elif number_1 == number_2:
@@ -63,13 +63,12 @@ if numbers % 2 == 0 and numbers != 0:
 -----------------------------------------------------------------------------------------------------------
 To solve the Gaussian Sum Problem applied to these numbers, {small_number} and {big_number}, we  first
 need to visualize a list of all the numbers that exist in between these numbers, including themselves.
-Now, we need to add the first number on the list to the last, and mentally remove them from the list.
-We repeat this process until we have no numbers left, or only one remaining.
-As you notice, the result is always the same: {added}.
-Now, think about the amount of pairs that we removed. If the number is even,
-then we just divide that number by 2, which gives us {count}.
-Finally, all we have to do is multiply the number of pairs with the result we got from adding them together,
-which will give us the final result: {total_sum}.
+Now, we need to pair the first number with the last one, and add them together.
+We can do this more than once to be sure, but the result is always the same: {added}.
+Now, think about the amount of pairs that we have. If the number is even, we just need to divide the total
+ammount of numbers by 2, which will give us {count}.
+Finally, all we have to do is multiply the number of pairs, {count}, with the result we got from adding
+them together, {added}, which will give us the final solution: {total_sum}.
 ------------------------------------------------------------------------------------------------------------
         """)
 else:
@@ -83,13 +82,13 @@ else:
 ------------------------------------------------------------------------------------------------------------
 To solve the Gaussian Sum Problem applied to these numbers, {small_number} and {big_number}, we first
 need to visualize a list of all the numbers that exist in between these numbers, including themselves.
-Now, we need to add the first number on the list to the last, and mentally remove them from the list.
-We repeat this process until we have no numbers left, or only one remaining.
+Now, we need to pair the first number with the last one, and add them together.
+We can do this more than once to be sure, but the result is always the same: {added}.
 As you notice, the result is always the same: {added}.
-Now, think about the amount of pairs that we removed. If the number is odd,
-then we divide that number by 2 and round it up, which gives us {count}.
-Finally, we have to multiply the number of pairs with the result we got from adding them together
-and add the remaining number, {middle}, giving us the final result: {total_sum}.
+Now, think about the amount of pairs that we have. If the number is odd, then we need to divide the total
+ammount of numbers by 2, and round down the result, which will give us {count}.
+Finally, we have to multiply the number of pairs, {count} with the result we got from adding them together,
+{added}, and add the remaining number, {middle}, giving us the final result: {total_sum}.
 ------------------------------------------------------------------------------------------------------------
     """)
 
@@ -107,7 +106,7 @@ while bol:
     else:
         print("\nPlease answer with a yes or a no.\n")
         time.sleep(1)
-        for i in range(4):
+        for i in range(6):
             sys.stdout.write("\033[F")
             sys.stdout.write("\033[K")
             sys.stdout.flush()
